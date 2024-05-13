@@ -18,10 +18,6 @@ public class LinkedList<T> implements List<T> {
         return tail;
     }
 
-    // public int getSize() {
-    //     return size;
-    // }
-
     public boolean isEmpty() {
         return (this.size() == 0);
     }
@@ -150,27 +146,23 @@ public class LinkedList<T> implements List<T> {
 
     public int size() {
 	    // head should be pointing at the first Node
-	    Node<T> current = this.getHead();
+	    Node<T> current = head;
 	    int counter = 0;
 	    while (current != null) {
 		    counter++;
 		    current = current.getNext();
 	    }
-        if (counter == 0) {
-            size = 0;
-        }
+        size = counter;
 	    return counter;
     }
 
-    public String toString() {
-        Node<T> current = head;
-        String result = "";
-        while (current != null) {
-            result = result + current.getData().toString() + "\n";
-            current = current.getNext();
-        }
-        return result;
-    }
-
-    
+    // public String toString() {
+    //     Node<T> current = head;
+    //     String result = "";
+    //     while (current != null) {
+    //         result = result + current.getData().toString() + "\n";
+    //         current = current.getNext();
+    //     }
+    //     return result;
+    // }
 }

@@ -70,15 +70,26 @@ public class LinkedListDriver {
         // System.out.println(ll1.getTail().getData());
         // System.out.println(ll1.size());
         
+        // ll1.addAtIndex(1, 0);
+        // ll1.addAtIndex(2, 1);
+        // ll1.addAtIndex(3, 2);
+        // ll1.addAtIndex(4, 3);
+        // ll1.addAtIndex(5, 4);
+        // System.out.println(ll1.isEmpty());
+        
+        // ll1.clear();
+        // System.out.println(ll1.isEmpty());
+
         ll1.addAtIndex(1, 0);
         ll1.addAtIndex(2, 1);
         ll1.addAtIndex(3, 2);
         ll1.addAtIndex(4, 3);
         ll1.addAtIndex(5, 4);
-        System.out.println(ll1.isEmpty());
-        
-        ll1.clear();
-        System.out.println(ll1.isEmpty());
+        System.out.println(ll1.size()); // should be 5
+        ll1.remove(2);
+        System.out.println(ll1.size()); // should be 4
+        ll1.removeAtIndex(0); // should be 3
+        System.out.println(ll1.size());
 
     }
 }
