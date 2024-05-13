@@ -17,7 +17,7 @@ public interface List<T> {
      * Retrieves the data of the node that's specified.
      * @param index the index of the node whose data we are retrieving
      */
-    // T getAtIndex(int index);
+    T getAtIndex(int index);
 
     /**
      * Removes the data at the specified index and returns the data that was removed.

@@ -50,6 +50,17 @@ public class LinkedList<T> implements List<T> {
         tail = current;
         size = size();
     }
+
+    public T getAtIndex(int index) {
+        if (index < 0 || (index > (this.size() - 1))) {
+            throw new IllegalArgumentException("Your index is out of the list bounds");
+        }
+        Node<T> current = head;
+        for (int i = 0; i < index; i++) {
+            current = current.getNext();
+        }
+        return current.getData();
+    }
     
     public int size() {
 	    // head should be pointing at the first Node
