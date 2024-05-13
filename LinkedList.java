@@ -44,7 +44,7 @@ public class LinkedList<T> implements List<T> {
         }
         // Setting tail should be the same for all cases which is iterate through the new LL
         Node<T> current = head;
-        while (current != null) {
+        while (current.getNext() != null) {
             current = current.getNext();
         }
         tail = current;
