@@ -23,7 +23,7 @@ public interface List<T> {
      * Removes the data at the specified index and returns the data that was removed.
      * @param index removes the Node at this index
      */
-    // T removeAtIndex(int index);
+    T removeAtIndex(int index);
 
     /**
      * Removes the Node with the data passed in if a Node containing the data exists.

@@ -16,6 +16,10 @@ public class LinkedList<T> implements List<T> {
         return tail;
     }
 
+    // public int getSize() {
+    //     return size;
+    // }
+
     public boolean isEmpty() {
         return (this.size() == 0);
     }
@@ -62,6 +66,41 @@ public class LinkedList<T> implements List<T> {
         return current.getData();
     }
     
+    public T removeAtIndex(int index) {
+        if (index < 0 || (index > (this.size() - 1))) {
+            throw new IllegalArgumentException("Your index is out of the list bounds");
+        }
+        T data = null;
+        if (index == 0) {
+            data = head.getData();
+            head = head.getNext();
+            // Garbage collection for the previous head since no pointer to it
+        }
+        else {
+            Node<T> previous = head;
+            Node<T> current = head;
+            for (int i = 0; i < index; i++) {
+                previous = current;
+                current = current.getNext();
+            }
+            data = current.getData();
+            previous.setNext(current.getNext());
+            // Garbage collection for current node
+        }
+        if (head == null) {
+            tail = null;
+        }
+        else {
+            Node<T> current = head;
+            while (current.getNext() != null) {
+                current = current.getNext();
+            }
+            tail = current;
+        }
+        size = size();
+        return data;
+    }
+
     public int size() {
 	    // head should be pointing at the first Node
 	    Node<T> current = this.getHead();
