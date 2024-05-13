@@ -19,11 +19,11 @@ public class LinkedList<T> implements List<T> {
     }
 
     public boolean isEmpty() {
-        return (this.size() == 0);
+        return (size == 0);
     }
     
     public void addAtIndex(T data, int index) {
-        if (index < 0 || index > this.size()) {
+        if (index < 0 || index > size) {
             throw new IllegalArgumentException("Your index is out of the list bounds");
         }
         else if (data == null) {
@@ -50,11 +50,11 @@ public class LinkedList<T> implements List<T> {
             current = current.getNext();
         }
         tail = current;
-        size = size();
+        size++;
     }
 
     public T getAtIndex(int index) {
-        if (index < 0 || (index > (this.size() - 1))) {
+        if (index < 0 || (index > (size - 1))) {
             throw new IllegalArgumentException("Your index is out of the list bounds");
         }
         Node<T> current = head;
@@ -65,7 +65,7 @@ public class LinkedList<T> implements List<T> {
     }
     
     public T removeAtIndex(int index) {
-        if (index < 0 || (index > (this.size() - 1))) {
+        if (index < 0 || (index > (size - 1))) {
             throw new IllegalArgumentException("Your index is out of the list bounds");
         }
         T data = null;
@@ -95,7 +95,7 @@ public class LinkedList<T> implements List<T> {
             }
             tail = current;
         }
-        size = size();
+        size--;
         return data;
     }
 
@@ -134,7 +134,7 @@ public class LinkedList<T> implements List<T> {
                 }
                 tail = current;
             }
-            size = size();
+            size--;
             return toReturn;
         }
     }
@@ -145,15 +145,7 @@ public class LinkedList<T> implements List<T> {
     }
 
     public int size() {
-	    // head should be pointing at the first Node
-	    Node<T> current = head;
-	    int counter = 0;
-	    while (current != null) {
-		    counter++;
-		    current = current.getNext();
-	    }
-        size = counter;
-	    return counter;
+        return size;
     }
 
     // public String toString() {
