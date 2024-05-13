@@ -1,3 +1,5 @@
+import java.util.NoSuchElementException;
+
 public class LinkedList<T> implements List<T> {
     private Node<T> head;
     private Node<T> tail;
@@ -99,6 +101,46 @@ public class LinkedList<T> implements List<T> {
         }
         size = size();
         return data;
+    }
+
+    public T remove(T data) {
+        if (data == null) {
+            throw new IllegalArgumentException("You cannot remove null data to the list");
+        }
+        Node<T> previous = head;
+        Node<T> current = head;
+        T toReturn = null;
+        while (current != null && !data.equals(current.getData())) {
+            previous = current;
+            current = current.getNext();
+        }
+        if (current == null) {
+            throw new NoSuchElementException("The data is not present in the list.");
+        }
+        else {
+            // Retrieve the data
+	        toReturn = current.getData();
+            // If current did not move i.e. data at the head
+            if (current == head) {
+                head = head.getNext();
+            }
+            else {
+            // If current is somewhere in the midst of the list
+                previous.setNext(current.getNext());
+            }
+            if (head == null) {
+                tail = null;
+            }
+            else {
+                current = head;
+                while (current.getNext() != null) {
+                    current = current.getNext();
+                }
+                tail = current;
+            }
+            size = size();
+            return toReturn;
+        }
     }
 
     public int size() {

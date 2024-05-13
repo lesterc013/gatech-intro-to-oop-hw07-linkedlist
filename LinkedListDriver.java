@@ -42,5 +42,36 @@ public class LinkedListDriver {
         //  System.out.println(ll1.size());
         //  System.out.println(ll1.isEmpty());
         
+        /*
+        * Testing remove
+        */
+        
+        // Remove data that is at the first index and LL only one node
+        // ll1.addAtIndex(1, 0);
+        // System.out.println("Removed: " + ll1.remove(1));
+        //  System.out.println(ll1.getHead());
+        //  System.out.println(ll1.getTail());
+        //  System.out.println(ll1.size());
+        //  System.out.println(ll1.isEmpty());
+        
+        // Remove data at first index but has more than one node
+        // Remove data that is at the last index
+        // Remove data that is in the middle indexes
+        // ll1.addAtIndex(1, 0);
+        // ll1.addAtIndex(2, 1);
+        // ll1.addAtIndex(3, 2);
+        // ll1.addAtIndex(4, 3);
+        // ll1.addAtIndex(5, 4);
+        // System.out.println(ll1.remove(6));
+        // System.out.println(ll1);
+        // System.out.println(ll1.getHead().getData());
+        // System.out.println(ll1.getTail().getData());
+        // System.out.println(ll1.size());
+        // System.out.println(ll1.isEmpty());
+        
+
+        // Null data input
+        // No such data input
+
     }
 }

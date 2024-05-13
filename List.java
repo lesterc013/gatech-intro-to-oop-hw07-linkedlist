@@ -29,7 +29,7 @@ public interface List<T> {
      * Removes the Node with the data passed in if a Node containing the data exists.
      * @param data the data to remove from the List
      */
-    // T remove(T data);
+    T remove(T data);
 
     /**
      * Clears the LinkedList - garbage collection is your friend here.
