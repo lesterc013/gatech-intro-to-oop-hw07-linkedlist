@@ -35,7 +35,7 @@ public interface List<T> {
      * Clears the LinkedList - garbage collection is your friend here.
      * THIS SOLUTION SHOULD CAN BE O(1)
      */
-    // void clear();
+    void clear();
 
     /**
      * Checks whether the LinkedList is empty or not.

@@ -143,6 +143,11 @@ public class LinkedList<T> implements List<T> {
         }
     }
 
+    public void clear() {
+        head = null;
+        tail = null;
+    }
+
     public int size() {
 	    // head should be pointing at the first Node
 	    Node<T> current = this.getHead();
